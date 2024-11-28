@@ -18,6 +18,7 @@ const helveticaNeue = localFont({
 export const metadata: Metadata = {
   title: "Finder Jet",
   description: "Report lost items and track them",
+    
 };
 
 export default function RootLayout({

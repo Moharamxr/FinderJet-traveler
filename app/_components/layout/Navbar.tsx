@@ -21,17 +21,17 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className=" flex justify-between items-center p-3 shadow-md shadow-gray-200">
-            <span className="md:ps-16">
-                <NavLogo />
+        <nav className="flex justify-between items-center w p-3 shadow-md shadow-gray-200">
+            <span className=" md:ps-16">
+                <NavLogo extraStyle="w-20 md:w-44 xl:w-48" />
             </span>
-            <ul className="hidden md:flex space-x-4">
+            <ul className="center gap-3">
                 {navItems.map((item) => (
                     <li
                         key={item.name}
                         className={` ${pathname === item.href ? "text-navActive" : "text-navItem"}`}
                     >
-                        <Link className="nav-item" href={item.href}>{item.name}</Link>
+                        <Link className="text-[9px] md:text-base font-medium leading-6 text-center " href={item.href}>{item.name}</Link>
                     </li>
                 ))}
             </ul>
@@ -42,9 +42,7 @@ const Navbar = () => {
                 textColor="white"
                 extraStyle="hidden md:block md:me-16"
             />
-            <div className="md:hidden">
-                <button className="text-navItem">Menu</button>
-            </div>
+           
         </nav>
     );
 };
