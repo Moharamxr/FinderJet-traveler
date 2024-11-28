@@ -19,6 +19,7 @@ export default {
         navItem: "var(--color-nav-item)",
         navActive: "var(--color-primary)",
         error: "var(--color-error)",
+        border: "var(--color-border)",
       },
       fontFamily: {
         helveticaNeue: ["var(--font-helvetica-neue)"],

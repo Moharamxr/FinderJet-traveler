@@ -22,16 +22,16 @@ const Navbar = () => {
 
     return (
         <nav className="flex justify-between items-center w p-3 shadow-md shadow-gray-200">
-            <span className=" md:ps-16">
-                <NavLogo extraStyle="w-20 md:w-44 xl:w-48" />
+            <span className="ps-3 md:ps-5 lg:ps-9">
+                <NavLogo extraStyle="w-32 md:w-44 xl:w-48" />
             </span>
-            <ul className="center gap-3">
+            <ul className="center gap-4">
                 {navItems.map((item) => (
                     <li
                         key={item.name}
                         className={` ${pathname === item.href ? "text-navActive" : "text-navItem"}`}
                     >
-                        <Link className="text-[9px] md:text-base font-medium leading-6 text-center " href={item.href}>{item.name}</Link>
+                        <Link className="text-[12px] sm:text-base   md:text-base font-medium leading-6 text-center " href={item.href}>{item.name}</Link>
                     </li>
                 ))}
             </ul>
