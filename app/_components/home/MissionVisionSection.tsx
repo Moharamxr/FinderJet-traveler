@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import PinkMagnifying from "../../_assets/home/pink-magnifying.png";
+import PinkMagnifying from "../../_assets/home/pink-magnifying.webp";
 import PrimaryBtn from "../buttons/PrimaryBtn";
 
 const MissionVisionSection = () => {
