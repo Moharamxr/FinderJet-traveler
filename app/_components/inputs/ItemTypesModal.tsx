@@ -1,74 +1,34 @@
 "use client";
-
 import React, { useState } from "react";
+import PrimaryBtn from "../buttons/PrimaryBtn";
 
-const ItemTypesModal = () => {
+type Option = {
+  category: string;
+  items: string[];
+};
+
+type ItemTypesModalProps = {
+  label?: string;
+  options: Option[];
+  placeholder?: string;
+  onSelect?: (selected: string) => void;
+};
+
+const ItemTypesModal: React.FC<ItemTypesModalProps> = ({
+  label = "Type of Lost Item",
+  options,
+  placeholder = "Select an item",
+  onSelect,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [customItem, setCustomItem] = useState<string>("");
-
-  const itemTypes = [
-    {
-      category: "Personal Items",
-      items: [
-        "Wallet",
-        "Mobile Phone",
-        "Passport",
-        "ID Card",
-        "Credit Cards",
-        "Glasses/Sunglasses",
-        "Keys",
-        "Jewelry",
-        "Wristwatches",
-      ],
-    },
-    {
-      category: "Electronics",
-      items: [
-        "Laptop",
-        "Headphones",
-        "Tablet",
-        "Camera",
-        "Charger/Cable",
-        "Power Bank",
-      ],
-    },
-    {
-      category: "Luggage & Bags",
-      items: ["Handbag", "Backpack", "Suitcase", "Gym Bag", "Briefcase"],
-    },
-    {
-      category: "Clothing & Personal Items",
-      items: ["Coat/Jacket", "Hat", "Scarf", "Gloves", "Shoes"],
-    },
-    {
-      category: "Documents",
-      items: ["Travel Tickets", "Documents", "Certificates"],
-    },
-    {
-      category: "Children's Items",
-      items: ["Stroller", "Toy", "Diaper Bag", "Baby Bottle"],
-    },
-    {
-      category: "Sports & Leisure Items",
-      items: ["Sports Equipment", "Books/Magazines", "Musical Instruments"],
-    },
-    {
-      category: "Miscellaneous Items",
-      items: [
-        "Water Bottle",
-        "Umbrella",
-        "Cosmetics/Makeup",
-        "Medical Supplies",
-        "Travel Accessories",
-      ],
-    },
-  ];
 
   const handleSelectItem = (item: string) => {
     setSelectedItem(item);
     if (item !== "Other") {
       setIsOpen(false);
+      if (onSelect) onSelect(item);
     }
   };
 
@@ -80,17 +40,18 @@ const ItemTypesModal = () => {
     if (customItem.trim()) {
       setSelectedItem(customItem);
       setIsOpen(false);
+      if (onSelect) onSelect(customItem);
     }
   };
 
   return (
     <div className="w-full">
-      <label className="block mb-2 text-subtitle font-medium">Type of Lost Item</label>
+      {label && <label className="block mb-2 text-subtitle font-medium">{label}</label>}
       <div
         className="bg-white flex justify-between items-center border border-border rounded-md p-5 pe-3 h-12 w-full outline-none hover:border-gray-400 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-[#6B6969]">{selectedItem || "Select an item"}</span>
+        <span className="text-[#6B6969]">{selectedItem || placeholder}</span>
         <svg
           width="14"
           height="14"
@@ -114,7 +75,7 @@ const ItemTypesModal = () => {
             className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"
             onClick={() => setIsOpen(false)}
           ></div>
-          <div className="fixed top-1/2 left-[52%] transform -translate-x-[55%] -translate-y-1/2 z-10 bg-white rounded-[20px] border border-border mt-2 w-full max-w-lg p-10 mx-3 ">
+          <div className="fixed top-1/2 left-[52%] transform -translate-x-[55%] -translate-y-1/2 z-10 bg-white rounded-[20px] border border-border mt-2 w-full max-w-lg p-10 mx-3">
             <svg
               width="11"
               height="11"
@@ -132,9 +93,10 @@ const ItemTypesModal = () => {
                 strokeLinejoin="round"
               />
             </svg>
+            <h3 className="text-center pb-2">{label}</h3>
 
             <div className="flex flex-col gap-5 max-h-96 overflow-y-auto custom-scroll">
-              {itemTypes.map(({ category, items }) => (
+              {options.map(({ category, items }) => (
                 <div key={category}>
                   <h4 className="font-medium mb-2">{category}</h4>
                   <div className="flex flex-wrap gap-2">
@@ -163,14 +125,10 @@ const ItemTypesModal = () => {
                     value={customItem}
                     onChange={handleOtherInputChange}
                     placeholder="Describe the item"
-                    className="mt-2 me-5 p-2 border border-border rounded-md w-full"
+                    className="mt-2  p-2 border border-border rounded-md w-full select-none"
                   />
-                  <button
-                    className="bg-primary text-white p-2 rounded-md mt-2 me-2"
-                    onClick={handleDone}
-                  >
-                    Done
-                  </button>
+                 
+                  <PrimaryBtn text="Done" bgColor="primary" textColor="white" onClick={handleDone} extraStyle="mt-2 me-2" />
                 </div>
               )}
             </div>

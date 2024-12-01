@@ -2,10 +2,11 @@
 import SelectInput from "@/app/_components/inputs/SelectInput";
 import TextInput from "@/app/_components/inputs/TextInput";
 import React from "react";
-import { Airlines } from "../../_data/static-data";
+import { Airlines, itemTypes } from "../../_data/static-data";
 import ItemTypesModal from "@/app/_components/inputs/ItemTypesModal";
 import FileInput from "@/app/_components/inputs/FileInput";
 import PrimaryBtn from "@/app/_components/buttons/PrimaryBtn";
+import LocationSelector from "@/app/_components/inputs/LocationSelector";
 const ReportForm = () => {
   return (
     <form className="bg-white rounded-[20px] p-8 lg:w-9/12 space-y-4">
@@ -28,11 +29,8 @@ const ReportForm = () => {
         Lost item information
       </h4>
       <div className="flex md:flex-row flex-col justify-between items-center gap-10">
-        <ItemTypesModal />
-        <TextInput
-          label="Seat/Location of Loss"
-          placeholder="Seat/Location of Loss"
-        />
+        <ItemTypesModal label="Type of Lost Item" options={itemTypes}  />
+       <LocationSelector />
       </div>
       <div className="w-full">
         {
