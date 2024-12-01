@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://finderjet.vercel.app/sitemap.xml

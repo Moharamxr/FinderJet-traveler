@@ -11,7 +11,7 @@ const MissionVisionSection = () => {
         <div className="bg-[#2872B3] rounded-[20px] p-8 py-10 md:w-4/12 w-full space-y-11 flex flex-col items-start">
           <h2>Who We Are</h2>
           <p className="font-normal leading-8 tracking-wider flex-grow">
-            FinderJet is your one-stop solution for managing lost and found items
+            <span>FinderJet</span> is your one-stop solution for managing lost and found items
             with ease, reliability, and efficiency. Whether you're a traveler
             looking for a lost item or an airline striving for seamless property
             management, FinderJet is here to bridge the gap. We provide an

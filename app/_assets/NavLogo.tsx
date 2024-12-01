@@ -11,7 +11,7 @@ const NavLogo = ({
   extraStyle?: string;
 }) => {
   return (
-    <Link href={"/"}>
+    <Link href={"/"} aria-label="Home" >
       <svg
         width={width}
         height={height}
