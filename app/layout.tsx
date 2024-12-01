@@ -13,17 +13,19 @@ const helveticaNeue = localFont({
     { path: "./fonts/HelveticaNeueItalic.ttf", weight: "400", style: "italic" },
   ],
   variable: "--font-helvetica-neue",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Finder Jet - Track and Report Lost Items",
+  title: "Finder Jet - Lost Item Tracker & Reporting",
   description:
-    "Finder Jet helps you report lost items and track them easily. Join our platform to ensure your lost belongings are found quickly.",
+    "Finder Jet makes it simple to report and track lost items. Join now to find your belongings quickly and efficiently.",
   keywords:
-    "lost items, track lost items, report lost items, find lost items, lost and found, Finder Jet, lost items tracker, FinderJet, finderjet, finder jet, lost items platform",
+    "lost items, track lost items, lost and found, Finder Jet",
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
 };
+
 
 export default function RootLayout({
   children,
