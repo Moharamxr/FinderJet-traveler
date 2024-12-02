@@ -7,9 +7,9 @@ type PrimaryBtnProps = {
   text: string;
   onClick?: () => void;
   disabled?: boolean;
-  bgColor?: "primary" | "secondary" | "discard";
+  bgColor?: "primary" | "secondary" | "discard" | "primaryLight";
   textColor?: "primary" | "white" | "secondary" | "headlines";
-  extraStyle ?: string;
+  extraStyle?: string;
 };
 
 const PrimaryBtn = ({
@@ -25,19 +25,19 @@ const PrimaryBtn = ({
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        "px-4 py-2 rounded-lg", 
-        "sm:px-6 sm:py-3", // Small screens
-        // "md:px-8 md:py-4", // Medium screens
-        // "lg:px-10 lg:py-5", // Large screens
-        bgColor === "primary" ? "bg-primary hover:bg-primaryHover" : 
-        bgColor === "secondary" ? "bg-secondary hover:bg-secondaryHover" : 
-        bgColor === "discard" ? "bg-discard hover:bg-discardHover" : "",
-        textColor === "primary" ? "text-primary" : 
-        textColor === "secondary" ? "text-secondary" : 
-        textColor === "headlines" ? "text-headlines" : "text-white",
+        "px-4 py-2 rounded-lg",
+        "sm:px-6 sm:py-3",
+        bgColor === "primary" && "bg-primary hover:bg-primaryHover",
+        bgColor === "secondary" && "bg-secondary hover:bg-secondaryHover",
+        bgColor === "discard" && "bg-discard hover:bg-discardHover",
+        bgColor === "primaryLight" && "bg-primaryLight hover:bg-discardHover",
+        textColor === "primary" && "text-primary",
+        textColor === "secondary" && "text-secondary",
+        textColor === "headlines" && "text-headlines",
+        textColor === "white" && "text-white",
         { "opacity-50 cursor-not-allowed": disabled },
-        " transition-all duration-300",
-        `${extraStyle}`,
+        "transition-all duration-300",
+        extraStyle // Ensure extraStyle is applied last
       )}
     >
       {text}

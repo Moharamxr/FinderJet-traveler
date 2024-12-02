@@ -12,6 +12,7 @@ export default {
         background: "var(--color-background)",
         foreground: "var(--foreground)",
         primary: "var(--color-primary)",
+        primaryLight: "var(--color-primary-light)",
         primaryHover: "var(--color-primary-hover)",
         discard: "var(--color-discard)",
         discardHover: "var(--color-discard-hover)",

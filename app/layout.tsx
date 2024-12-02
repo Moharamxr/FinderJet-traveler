@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./_components/layout/Navbar";
@@ -22,8 +22,14 @@ export const metadata: Metadata = {
     "Finder Jet makes it simple to report and track lost items. Join now to find your belongings quickly and efficiently.",
   keywords:
     "lost items, track lost items, lost and found, Finder Jet",
-  viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
+};
+// Viewport settings should be separate, not part of metadata
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 

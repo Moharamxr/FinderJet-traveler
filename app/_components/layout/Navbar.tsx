@@ -23,10 +23,10 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="flex justify-between items-center p-3 shadow-md shadow-gray-200 relative">
+        <nav className="flex justify-between items-center p-3  shadow-md shadow-gray-200 relative">
             {/* Logo */}
             <span className="ps-3 md:ps-5 lg:ps-9">
-                <NavLogo extraStyle="w-32 md:w-44 xl:w-48" />
+                <NavLogo extraStyle="w-32 md:w-44 xl:w-52" />
             </span>
 
             {/* Burger Icon */}
@@ -49,6 +49,7 @@ const Navbar = () => {
                         <Link
                             className="text-[12px] sm:text-base font-medium leading-6 text-center"
                             href={item.href}
+                            aria-label={item.name}
                         >
                             {item.name}
                         </Link>
@@ -84,6 +85,7 @@ const Navbar = () => {
                             <Link
                                 className="text-[14px] font-medium text-center"
                                 href={item.href}
+                                aria-label={item.name}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {item.name}

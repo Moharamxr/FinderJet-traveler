@@ -5,7 +5,7 @@ import PrimaryBtn from "../buttons/PrimaryBtn";
 
 const MissionVisionSection = () => {
   return (
-    <div className="center gap-5 px-20 text-[#F3F3F3] pt-5">
+    <div className="center gap-5 px-5 md:px-20 text-[#F3F3F3] pt-5">
       <div className="flex gap-5 flex-wrap justify-center">
         {/* Card 1 */}
         <div className="bg-[#2872B3] rounded-[20px] p-8 py-10 md:w-4/12 w-full space-y-11 flex flex-col items-start">

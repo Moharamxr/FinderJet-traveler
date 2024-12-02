@@ -51,7 +51,7 @@ const ItemTypesModal: React.FC<ItemTypesModalProps> = ({
         className="bg-white flex justify-between items-center border border-border rounded-md p-5 pe-3 h-12 w-full outline-none hover:border-gray-400 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="text-[#6B6969]">{selectedItem || placeholder}</span>
+        <span className="text-headlines">{selectedItem || placeholder}</span>
         <svg
           width="14"
           height="14"
