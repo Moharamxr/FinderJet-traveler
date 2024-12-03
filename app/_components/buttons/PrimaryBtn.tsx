@@ -25,7 +25,7 @@ const PrimaryBtn = ({
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        "px-4 py-2 rounded-lg",
+        "px-4 py-2 rounded-lg  tracking-wide" ,
         "sm:px-6 sm:py-3",
         bgColor === "primary" && "bg-primary hover:bg-primaryHover",
         bgColor === "secondary" && "bg-secondary hover:bg-secondaryHover",

@@ -81,7 +81,7 @@ const HeroSection = () => {
               priority={true}
             />
           </div>
-          <div className="absolute w-auto h-auto left-6 top-[18%] transform translate-x-1/2 -translate-y-1/2">
+          <div className="absolute w-auto h-auto left-10 top-[18%] transform translate-x-1/2 -translate-y-1/2">
             <Image
               src={CloudIcon}
               alt="CloudIcon"

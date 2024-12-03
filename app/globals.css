@@ -15,6 +15,7 @@
   --color-background: #ffffff;
   --color-headlines: #1e1e1e;
   --color-subtitle: #434343;
+  --color-info: #6B6969;
   --color-border: #E6E6E6;
   --color-error: #d32f2f;
   --color-discard: #E6E6E6;
@@ -41,6 +42,8 @@ h1 {
 h2 {
   font-size: 28px;
   font-weight: 500;
+  text-align: center;
+
 }
 
 h3 {
@@ -57,7 +60,6 @@ p {
   font-size: 16px;
 font-weight: 400;
 line-height: 26px;
-text-align: center;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 

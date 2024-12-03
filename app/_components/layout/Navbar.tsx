@@ -62,7 +62,7 @@ const Navbar = () => {
                 text="Report lost item"
                 onClick={() => {}}
                 bgColor="secondary"
-                textColor="white"
+                textColor="headlines"
                 extraStyle="hidden md:block md:me-16"
             />
 

@@ -1,3 +1,4 @@
+import { info } from "console";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,6 +21,7 @@ export default {
         secondaryHover: "var(--color-secondary-hover)",
         headlines: "var(--color-headlines)",
         subtitle: "var(--color-subtitle)",
+        info: "var(--color-info)",
         navItem: "var(--color-nav-item)",
         navActive: "var(--color-primary)",
         error: "var(--color-error)",
