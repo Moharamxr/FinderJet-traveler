@@ -9,15 +9,20 @@ import StepTwoMob from "@/app/_assets/steps/mobile/mobil-step-2.svg";
 import StepThreeMob from "@/app/_assets/steps/mobile/mobil-step-3.svg";
 import StepFourMob from "@/app/_assets/steps/mobile/mobil-step-4.svg";
 import StepFiveMob from "@/app/_assets/steps/mobile/mobil-step-5.svg";
-  
+
 import Image from "next/image";
 import React from "react";
+import ProgressBar from "@/app/_assets/steps/ProgressBar";
+import ReportReceivedIcon from "@/app/_assets/icons/ReportReceivedIcon";
+import UnderReviewIcon from "@/app/_assets/icons/UnderReviewIcon";
+import PartialMatchIcon from "@/app/_assets/icons/PartialMatchIcon";
+import MatchedIcon from "@/app/_assets/icons/MatchedIcon";
+import ResolvedIcon from "@/app/_assets/icons/ResolvedIcon";
 
 const stepImages = {
   desktop: [StepOne, StepTwo, StepThree, StepFour, StepFive],
   mobile: [StepOneMob, StepTwoMob, StepThreeMob, StepFourMob, StepFiveMob],
 };
-
 
 const ReportDetails = ({ data }: { data: any }) => {
   return (
@@ -57,8 +62,30 @@ const ReportDetails = ({ data }: { data: any }) => {
       </div> */}
 
       <div className="w-full center">
-        <StepOne 
-         extraStyle="w-full h-auto bg-black" />
+        <ProgressBar progress={75} />
+      </div>
+      {/* Report Steps icons*/}
+      <div className="w-full flex justify-between pt-10 ">
+        <div className="w-1/5 flex flex-col items-center gap-3">
+          <ReportReceivedIcon />
+          <p className="text-subtitle text-xs text-center">Report Received</p>
+        </div>
+        <div className="w-1/5 flex flex-col items-center gap-3">
+          <UnderReviewIcon />
+          <p className="text-subtitle text-xs text-center">Under Review</p>
+        </div>
+        <div className="w-1/5 flex flex-col items-center gap-3">
+          <PartialMatchIcon />
+          <p className="text-subtitle text-xs text-center">Partial Match</p>
+        </div>
+        <div className="w-1/5 flex flex-col items-center gap-3">
+          <MatchedIcon />
+          <p className="text-subtitle text-xs text-center">Matched</p>
+        </div>
+        <div className="w-1/5 flex flex-col items-center gap-3">
+          <ResolvedIcon />
+          <p className="text-subtitle text-xs text-center">Resolved</p>
+        </div>
       </div>
 
       {/* <div className="w-full  bg-black">

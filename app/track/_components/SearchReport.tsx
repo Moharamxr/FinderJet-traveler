@@ -9,7 +9,7 @@ const SearchReport = ({
   onSearch: (result: any) => void;
 }) => {
   return (
-    <div className="flex flex-col md:flex-row gap-3 md:gap-0 w-full">
+    <div className="flex flex-col justify-center md:flex-row gap-3 md:gap-0 w-full">
       <input
         type="text"
         name="Name"
