@@ -22,7 +22,7 @@ const HeroSection = () => {
           <Image
             src={Wallet}
             alt="Wallet"
-            className="object-contain  w-14 h-14"
+            className="object-contain w-11 h-11 md:w-14 md:h-14"
             draggable={false}
             priority={true}
           />
@@ -31,7 +31,7 @@ const HeroSection = () => {
           <Image
             src={Binoculars}
             alt="Binoculars"
-            className="object-contain w-16 "
+            className="object-contain w-14 md:w-16 "
             style={{ height: "auto" }}
 
             draggable={false}
@@ -63,7 +63,7 @@ const HeroSection = () => {
             src={Suitcase}
             
             alt="Wallet"
-            className="object-contain w-9 h-14"
+            className="object-contain  md:w-9 md:h-14"
             draggable={false}
             priority={true}
           />

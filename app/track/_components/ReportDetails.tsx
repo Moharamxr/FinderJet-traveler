@@ -1,6 +1,23 @@
-import StepOne from "@/app/_assets/steps/StepOne copy";
+import StepOne from "@/app/_assets/steps/StepOne";
+import StepTwo from "@/app/_assets/steps/step (2).svg";
+import StepThree from "@/app/_assets/steps/step (3).svg";
+import StepFour from "@/app/_assets/steps/step (4).svg";
+import StepFive from "@/app/_assets/steps/step (5).svg";
+
+import StepOneMob from "@/app/_assets/steps/mobile/mobil-step-1.svg";
+import StepTwoMob from "@/app/_assets/steps/mobile/mobil-step-2.svg";
+import StepThreeMob from "@/app/_assets/steps/mobile/mobil-step-3.svg";
+import StepFourMob from "@/app/_assets/steps/mobile/mobil-step-4.svg";
+import StepFiveMob from "@/app/_assets/steps/mobile/mobil-step-5.svg";
+  
 import Image from "next/image";
 import React from "react";
+
+const stepImages = {
+  desktop: [StepOne, StepTwo, StepThree, StepFour, StepFive],
+  mobile: [StepOneMob, StepTwoMob, StepThreeMob, StepFourMob, StepFiveMob],
+};
+
 
 const ReportDetails = ({ data }: { data: any }) => {
   return (
@@ -20,19 +37,30 @@ const ReportDetails = ({ data }: { data: any }) => {
       </div>
 
       {/* Report Steps */}
-      {/* <div className="center w-full bg-slate-200 min-h-fit p-0  md:p-10 md:pt-16"> */}
-      {/* <Image
-          src={StepOne}
+      {/* <div className="hidden md:block center w-full">
+        <Image
+          src={stepImages.desktop[0]}
           alt="Step Image"
-          className="w-[400px] h-[100px] bg-black"
+          className="w-full hidden md:block"
           draggable={false}
-          priority={true}
           quality={100}
-        /> */}
-      {/* </div> */}
-      <div className="w-full center">
-        <StepOne extraStyle="" />
+        />
       </div>
+      <div className="block md:hidden center w-full">
+        <Image
+          src={stepImages.mobile[0]}
+          alt="Step Image"
+          className="w-full"
+          draggable={false}
+          quality={100}
+        />
+      </div> */}
+
+      <div className="w-full center">
+        <StepOne 
+         extraStyle="w-full h-auto bg-black" />
+      </div>
+
       {/* <div className="w-full  bg-black">
         <ol className="flex justify-center items-center w-full mb-4 sm:mb-5">
           <li className="flex w-full items-center  justify-center text-blue-600 dark:text-blue-500 after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-100 after:border-4 after:inline-block dark:after:border-blue-800">
@@ -109,7 +137,9 @@ const ReportDetails = ({ data }: { data: any }) => {
       <div className=" flex flex-col gap-6 w-full">
         {/* Personal Information */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-primary">Personal Information</h3>
+          <h3 className="text-xl font-semibold mb-4 text-primary">
+            Personal Information
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-3">
             <div className="col-span-1 ">
               <p className="text-lg font-medium text-subtitle">Full Name</p>
@@ -134,7 +164,9 @@ const ReportDetails = ({ data }: { data: any }) => {
 
         {/* Additional Information */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-primary">Additional Information</h3>
+          <h3 className="text-xl font-semibold mb-4 text-primary">
+            Additional Information
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-3">
             <div className="col-span-1 ">
               <p className="text-lg font-medium text-subtitle">
@@ -183,7 +215,9 @@ const ReportDetails = ({ data }: { data: any }) => {
 
         {/* Item Information */}
         <div>
-          <h3 className="text-xl font-semibold mb-4 text-primary">Lost item information</h3>
+          <h3 className="text-xl font-semibold mb-4 text-primary">
+            Lost item information
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 w-full gap-3">
             <div className="col-span-1 ">
               <p className="text-lg font-medium text-subtitle">

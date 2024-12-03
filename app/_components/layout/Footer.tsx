@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className="bg-primaryLight flex flex-col md:flex-row justify-start gap-20 bottom-0 w-full p-4 py-6 md:py-14 md:px-16">
       <div className="flex md:flex-col md:justify-start justify-between items-center gap-5 ">
-        <span className="w-52"><NavLogo /></span>
+        <span className="w-44 md:w-52"><NavLogo /></span>
         <div className="flex flex-col gap-3">
           <p className="text-base font-medium text-center text-headlines">
             Connect With Us
