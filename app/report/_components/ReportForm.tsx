@@ -20,6 +20,15 @@ const FileInput = dynamic(() => import("@/app/_components/inputs/FileInput"), {
 
 type TabsType = "Airport" | "Hotel";
 
+const FormRow = ({ children }:{
+    children: React.ReactNode
+}) => (
+  <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+    {children}
+  </div>
+);
+
+
 const ReportForm = () => {
   const [selectedTab, setSelectedTab] = useState<TabsType>("Airport");
   const [isReceivedReportModalOpen, setIsReceivedReportModalOpen] = useState<boolean>(true);
@@ -40,6 +49,7 @@ const ReportForm = () => {
         {["Airport", "Hotel"].map((tab) => (
           <span
             key={tab}
+            aria-selected={selectedTab === tab}
             className={clsx(
               selectedTab === tab ? "bg-primary text-white" : "bg-primaryLight text-primary",
               buttonClasses
@@ -52,15 +62,15 @@ const ReportForm = () => {
       </div>
 
       {/* Form */}
-      <form className="bg-white rounded-[20px] p-8 lg:w-9/12 flex flex-col gap-4">
+      <form className="bg-white rounded-[20px] p-8 w-full lg:w-9/12 flex flex-col gap-4">
         <h3 className="text-2xl font-medium tracking-wide mb-5">Personal Information</h3>
-        <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+        <FormRow>
           <TextInput label="First Name" placeholder="John" />
           <TextInput label="Last Name" placeholder="Doe" />
-        </div>
+        </FormRow>
 
-        <h3 className="text-2xl font-medium tracking-wide mb-5">Lost Item Information</h3>
-        <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+        <h3 className=" font-medium tracking-wide mb-5">Lost Item Information</h3>
+        <FormRow>
           <ItemTypesModal label="Type of Lost Item" options={itemTypes} />
           <ItemTypesModal
             label="Location of Lost Item"
@@ -68,7 +78,7 @@ const ReportForm = () => {
             placeholder="Select a location"
             onSelect={handleLocationSelect}
           />
-        </div>
+        </FormRow>
         {selectedLocation && (
           <div className="mt-4 w-full">
             <label className="block mb-2 text-subtitle font-medium">
@@ -97,36 +107,36 @@ const ReportForm = () => {
         {selectedTab === "Airport" && (
           <>
             <h3 className="text-2xl font-medium tracking-wide mb-5">Flight Information</h3>
-            <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+            <FormRow>
               <TextInput label="Booking Number" placeholder="98474844999" />
               <SelectInput label="Airline" options={Airlines} />
-            </div>
-            <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+            </FormRow>
+            <FormRow>
               <TextInput label="Flight Number" placeholder="98474844999" />
               <TextInput label="Choose Flight Date" placeholder="Date" />
-            </div>
-            <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+            </FormRow>
+            <FormRow>
               <SelectInput label="Departure Station" options={Airlines} />
               <SelectInput label="Arrival Station" options={Airlines} />
-            </div>
+            </FormRow>
           </>
         )}
 
         {selectedTab === "Hotel" && (
           <>
             <h3 className="text-2xl font-medium tracking-wide mb-5">Additional Information</h3>
-            <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+            <FormRow>
               <TextInput label="Choose Lost Date" placeholder="Date" />
               <TextInput label="Room Number (optional)" placeholder="12345" />
-            </div>
+            </FormRow>
           </>
         )}
 
         <h3 className="text-2xl font-medium tracking-wide mb-5">Contact Information</h3>
-        <div className="flex md:flex-row flex-col justify-between items-center gap-10">
+        <FormRow>
           <TextInput label="Mobile Number" placeholder="192833767687" />
           <TextInput label="Email Address" placeholder="Email Address" />
-        </div>
+        </FormRow>
         <div className="flex flex-row-reverse gap-4 pt-10">
           <PrimaryBtn text="Discard" bgColor="discard" textColor="primary" />
           <PrimaryBtn text="Send Report" bgColor="primary" textColor="white" />

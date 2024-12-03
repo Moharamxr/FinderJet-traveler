@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className={`${helveticaNeue.variable} antialiased`}>
         <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
