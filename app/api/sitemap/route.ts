@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 export const GET = async () => {
-  const baseUrl = 'https://finderjet.com';
+  const baseUrl = 'https://finderjet.vercel.app';
 
   // Add dynamic URLs
   const urls = [
