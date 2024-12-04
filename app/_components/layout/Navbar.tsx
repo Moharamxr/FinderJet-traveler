@@ -6,6 +6,7 @@ import PrimaryBtn from "../buttons/PrimaryBtn";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MenuIcon from "@/app/_assets/icons/MenuIcon";
+import clsx from "clsx";
 
 type NavItem = {
     name: string;
@@ -25,7 +26,7 @@ const Navbar = () => {
     return (
         <nav className="flex justify-between items-center p-3  shadow-md shadow-gray-200 relative">
             {/* Logo */}
-            <span className="ps-3 md:ps-5 lg:ps-9 w-32 md:w-44 xl:w-52">
+            <span className="ps-3 md:ps-5 lg:ps-9 w-44 xl:w-52">
                 <NavLogo  />
             </span>
 
@@ -42,9 +43,10 @@ const Navbar = () => {
                 {navItems.map((item) => (
                     <li
                         key={item.name}
-                        className={`${
-                            pathname === item.href ? "text-navActive" : "text-navItem"
-                        }`}
+                        className={clsx(
+                            pathname === item.href ? "text-navActive" : "text-navItem",
+                           
+                )}
                     >
                         <Link
                             className="text-[12px] sm:text-base font-medium leading-6 text-center"
@@ -58,13 +60,15 @@ const Navbar = () => {
             </ul>
 
             {/* Primary Button for Desktop */}
+            <Link href="/report" className="hidden md:block">
             <PrimaryBtn
                 text="Report lost item"
                 onClick={() => {}}
                 bgColor="secondary"
-                textColor="headlines"
-                extraStyle="hidden md:block md:me-16"
+                textColor="white"
+                extraStyle="hidden md:block  lg:me-16"
             />
+            </Link>
 
             {/* Mobile Menu with Expand Animation */}
             <div
@@ -83,7 +87,7 @@ const Navbar = () => {
                             }`}
                         >
                             <Link
-                                className="text-[14px] font-medium text-center"
+                                className="text-[14px] font-medium text-center leading-relaxed"
                                 href={item.href}
                                 aria-label={item.name}
                                 onClick={() => setIsMenuOpen(false)}

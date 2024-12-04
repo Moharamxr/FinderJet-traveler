@@ -11,6 +11,7 @@ import Suitcase from "../../_assets/home/suitcase.webp";
 import Wallet from "../../_assets/home/wallet.webp";
 import Kite from "../../_assets/home/kite.webp";
 import PrimaryBtn from "../buttons/PrimaryBtn";
+import Link from "next/link";
 
 const HeroSection = () => {
   return (
@@ -134,7 +135,9 @@ const HeroSection = () => {
           <h2 className="text-xl md:text-[28] text-center text-secondary">
             Effortlessly Locate and Recover Your Lost Items
           </h2>
+          <Link href="/report">
           <PrimaryBtn text="Report lost items" />
+          </Link>
         </div>
       </div>
     </section>
