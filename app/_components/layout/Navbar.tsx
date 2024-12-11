@@ -52,6 +52,7 @@ const Navbar = () => {
                             className="text-[12px] sm:text-base font-medium leading-6 text-center"
                             href={item.href}
                             aria-label={item.name}
+                            prefetch={true}
                         >
                             {item.name}
                         </Link>

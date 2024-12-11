@@ -28,7 +28,7 @@ const ReportDetails = ({ data }: { data: any }) => {
   return (
     <div className="bg-white rounded-[20px] p-5 md:py-14 md:px-10 w-full max-w-6xl relative">
       {/* Report Header */}
-      <div className="border border-primary bg-primaryLight rounded-[4px] w-full p-5 mb-8 md:px-5 md:py-6 flex  flex-col md:flex-row  justify-between items-center gap-3">
+      <div className="border border-primary bg-primaryLight rounded-[4px] w-full p-5 mb-8 md:px-5 md:py-6 flex  flex-col md:flex-row  justify-between  items-center gap-3 h-16 ">
         <div className="flex  items-center gap-1">
           <span className="font-[500] text-subtitle">Report Number</span>
           <span className="font-medium text-lg">•</span>
@@ -66,25 +66,25 @@ const ReportDetails = ({ data }: { data: any }) => {
       </div>
       {/* Report Steps icons*/}
       <div className="w-full flex justify-between pt-10 ">
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="w-1/5 flex flex-col justify-between items-center gap-3 h-16 ">
           <ReportReceivedIcon />
-          <p className="text-subtitle text-xs text-center">Report Received</p>
+          <p className="text-subtitle text-xs  md:text-sm  text-center">Report Received</p>
         </div>
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="w-1/5 flex flex-col justify-between items-center gap-3 h-16 ">
           <UnderReviewIcon />
-          <p className="text-subtitle text-xs text-center">Under Review</p>
+          <p className="text-subtitle text-xs  md:text-sm  text-center">Under Review</p>
         </div>
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="w-1/5 flex flex-col justify-between items-center gap-3 h-16 ">
           <PartialMatchIcon />
-          <p className="text-subtitle text-xs text-center">Partial Match</p>
+          <p className="text-subtitle text-xs  md:text-sm  text-center">Partial Match</p>
         </div>
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="w-1/5 flex flex-col justify-between items-center gap-3 h-16 ">
           <MatchedIcon />
-          <p className="text-subtitle text-xs text-center">Matched</p>
+          <p className="text-subtitle text-xs  md:text-sm  text-center">Matched</p>
         </div>
-        <div className="w-1/5 flex flex-col items-center gap-3">
+        <div className="w-1/5 flex flex-col justify-between items-center gap-3 h-16 ">
           <ResolvedIcon />
-          <p className="text-subtitle text-xs text-center">Resolved</p>
+          <p className="text-subtitle text-xs  md:text-sm  text-center">Resolved</p>
         </div>
       </div>
 

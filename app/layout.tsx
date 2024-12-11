@@ -23,6 +23,7 @@ export const metadata: Metadata = {
   keywords:
     "lost items, track lost items, lost and found, Finder Jet",
   robots: "index, follow",
+  applicationName: "Finder Jet",
 };
 // Viewport settings should be separate, not part of metadata
 export const viewport: Viewport = {

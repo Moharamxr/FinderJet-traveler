@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 import CloudIcon from "../../_assets/home/cloud.webp";
 import Binoculars from "../../_assets/home/blue-binoculars.webp";
 import CreditCards from "../../_assets/home/credit-card.webp";
@@ -34,7 +33,6 @@ const HeroSection = () => {
             alt="Binoculars"
             className="object-contain w-14 md:w-16 "
             style={{ height: "auto" }}
-
             draggable={false}
             priority={true}
           />
@@ -54,7 +52,6 @@ const HeroSection = () => {
             src={Magnifier}
             alt="Magnifier"
             className="object-contain w-16 h-16"
-
             draggable={false}
             priority={true}
           />
@@ -62,7 +59,6 @@ const HeroSection = () => {
         <div className="w-20 h-20 center bg-[#F3F4F7] rounded-full absolute left-[18%] md:left-6 bottom-[10%] md:bottom-1/3 transform -translate-x-1/2 translate-y-1/2 p-3">
           <Image
             src={Suitcase}
-            
             alt="Wallet"
             className="object-contain  md:w-9 md:h-14"
             draggable={false}
@@ -77,7 +73,7 @@ const HeroSection = () => {
             <Image
               src={LargePlane}
               alt="LargePlane"
-              className="object-contain w-14 h-11 "
+              className="object-contain w-14 h-11"
               draggable={false}
               priority={true}
             />
@@ -87,7 +83,6 @@ const HeroSection = () => {
               src={CloudIcon}
               alt="CloudIcon"
               className="object-contain w-12 h-12"
-
               draggable={false}
               priority={true}
             />
@@ -97,7 +92,6 @@ const HeroSection = () => {
               src={Kite}
               alt="Kite"
               className="object-contain w-12 h-12"
-
               draggable={false}
               priority={true}
             />
@@ -108,7 +102,6 @@ const HeroSection = () => {
               src={CreditCards}
               alt="Credit Cards"
               className="object-contain w-12 h-12"
-
               draggable={false}
               priority={true}
             />
@@ -119,7 +112,6 @@ const HeroSection = () => {
               src={CreditCards2}
               alt="Credit Cards 2"
               className="object-contain w-12 h-12"
-
               draggable={false}
               priority={true}
             />
@@ -136,7 +128,7 @@ const HeroSection = () => {
             Effortlessly Locate and Recover Your Lost Items
           </h2>
           <Link href="/report">
-          <PrimaryBtn text="Report lost items" />
+            <PrimaryBtn text="Report lost items" />
           </Link>
         </div>
       </div>

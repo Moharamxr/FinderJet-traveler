@@ -6,10 +6,10 @@ const nextConfig: NextConfig = {
       {
         source: "/sitemap.xml",
         destination: "/api/sitemap", // Use the API route for the sitemap
-      },
+      }
     ];
   },
-  // Add other config options here
+  compress: true,
 };
 
 export default nextConfig;
