@@ -1,4 +1,3 @@
-import { info } from "console";
 import type { Config } from "tailwindcss";
 
 export default {
